@@ -1,6 +1,6 @@
 import { execSync } from 'child_process';
 import * as fs from 'fs';
-import path from 'pathe';
+import * as path from 'path';
 
 function readNodeVersion(cwd: string) {
   const rcPath = path.resolve(cwd, '.nvmrc');
