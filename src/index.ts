@@ -3,10 +3,11 @@ import * as fs from 'fs';
 import path from 'pathe';
 
 function readNodeVersion(cwd: string) {
-  try {
-    return fs.readFileSync(path.resolve(cwd, '.nvmrc')).toString();
-  } catch (e) {
-    console.log('Failed to read .nvmrc file:', e);
+  const rcPath = path.resolve(cwd, '.nvmrc');
+  if (fs.existsSync(rcPath)) {
+    return fs.readFileSync(rcPath).toString();
+  } else {
+    console.log('No .nvmrc file found.');
     process.exit(0);
   }
 }
