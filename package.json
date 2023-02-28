@@ -17,17 +17,13 @@
   ],
   "scripts": {
     "prebuild": "rimraf -rf lib",
-    "build": "babel src -d lib --extensions \".ts\"",
+    "build": "tsc --outDir lib",
     "prettier": "prettier --write src/"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.21.0",
-    "@babel/core": "^7.21.0",
-    "@babel/preset-env": "^7.20.2",
-    "@babel/preset-typescript": "^7.21.0",
     "@types/node": "^18.14.1",
     "prettier": "^2.8.4",
     "prettier-plugin-organize-imports": "^3.2.2",
